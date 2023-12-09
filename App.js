@@ -15,9 +15,10 @@ import {
 import React, {useRef, useState} from 'react';
 import {questionData} from './db/questions';
 import QuestionItem from './screens/QuestionItem';
+import HealthInfo from './screens/HealthInfo';
 const {height, width} = Dimensions.get('window');
 // import HealthImg from './assets/health.svg';
-function HomeScreen() {
+function HomeScreen({navigation}) {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [questions, setQuestions] = useState(questionData);
   const listRef = useRef();
@@ -158,6 +159,7 @@ function HomeScreen() {
             }}
             onPress={() => {
               setModalVisible(true);
+              navigation.navigate('HealthInfo');
             }}>
             <Text style={{color: '#fff'}}>Submit</Text>
           </TouchableOpacity>
@@ -256,6 +258,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="HealthInfo" component={HealthInfo} />
       </Stack.Navigator>
     </NavigationContainer>
   );
