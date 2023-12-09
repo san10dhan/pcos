@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "pcos",
+    "slug": "pcos",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "pcos"
+}
